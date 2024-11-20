@@ -8,4 +8,12 @@ public interface ProductDao {
 
 	List<Product> getAllProducts();
 
+	boolean addNewPorduct(Product p);
+
+	Product getById(int id);
+
+	boolean updateProduct(Product p);
+
+	boolean deleteBtId(int id);
+
 }

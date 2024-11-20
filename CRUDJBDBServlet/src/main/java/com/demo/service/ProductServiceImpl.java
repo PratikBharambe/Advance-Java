@@ -19,4 +19,24 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getAllProducts();
 	}
 
+	@Override
+	public boolean addNewProduct(Product p) {
+		return productDao.addNewPorduct(p);
+	}
+
+	@Override
+	public Product getById(int id) {
+		return productDao.getById(id);
+	}
+
+	@Override
+	public boolean updateProduct(Product p) {
+		return productDao.updateProduct(p);
+	}
+
+	@Override
+	public boolean deletById(int id) {
+		return productDao.deleteBtId(id);
+	}
+
 }

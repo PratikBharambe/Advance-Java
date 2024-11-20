@@ -15,24 +15,26 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-public class AddProductServlet extends HttpServlet{
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {		
-		String name = request.getParameter("name");
-		int quantity = Integer.parseInt(request.getParameter("quantity"));
+public class UpdateProductServlet extends HttpServlet {
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		int id = Integer.parseInt(request.getParameter("pid"));
+		String pname = request.getParameter("pname");
+		int qty = Integer.parseInt(request.getParameter("qty"));
 		double price = Double.parseDouble(request.getParameter("price"));
-		String dt = request.getParameter("date");
-		LocalDate date = LocalDate.parse(dt, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		String dt = request.getParameter("expdate");
+		LocalDate ldt = LocalDate.parse(dt, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 		int cid = Integer.parseInt(request.getParameter("cid"));
 		
-		ProductService productService = new ProductServiceImpl();		
-		Product p = new Product(name, quantity, price, date, cid);
+		Product p = new Product(id, pname, qty, price, ldt, cid);
+		ProductService pservice = new ProductServiceImpl();
 		
-		productService.addNewProduct(p);
+		boolean status = pservice.updateProduct(p);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("showProduct");
 		rd.forward(request, response);
-	
+
 	}
 
 }

@@ -30,7 +30,8 @@ public class ShowProductServlet extends HttpServlet {
 			for (Product p : productList) {
 				out.println("<tr><td>"+p.getId()+"</td><td>"+p.getName()+"</td><td>"+p.getQuantity()+"</td><td>"+p.getPrice()+"</td>");
 				String date = p.getExpiryDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));;
-				out.println("<td>"+date+"</td><td>"+p.getCid()+"</td><td>Actions</td></tr>");				
+				out.println("<td>"+date+"</td><td>"+p.getCid()+"</td>");
+				out.println("<td><a href='editProduct?id="+p.getId()+"'>edit</a>/<a href='deleteProduct?id="+p.getId()+"'>delete</a></td></tr>");				
 			}
 			out.println("</table>");
 			out.println("<form action='addProduct.html' action='post'>");

@@ -24,6 +24,15 @@ public class Product {
 		this.expiryDate = expiryDate;
 		this.cid = cid;
 	}
+	
+	public Product(String name, int quantity, double price, LocalDate expiryDate, int cid) {
+		super();
+		this.name = name;
+		this.quantity = quantity;
+		this.price = price;
+		this.expiryDate = expiryDate;
+		this.cid = cid;
+	}
 
 	public int getId() {
 		return id;
