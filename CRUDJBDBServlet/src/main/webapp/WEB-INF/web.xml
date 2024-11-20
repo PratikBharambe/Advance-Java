@@ -33,4 +33,13 @@
 		<url-pattern>/showProduct</url-pattern>  		
   </servlet-mapping>
   
+  <servlet>
+  		<servlet-name>addProduct</servlet-name>
+  		<servlet-class>com.demo.servlet.AddProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  		<servlet-name>addProduct</servlet-name>
+		<url-pattern>/addNewProduct</url-pattern>  		
+  </servlet-mapping>
+  
 </web-app>
