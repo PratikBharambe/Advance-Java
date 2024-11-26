@@ -14,9 +14,16 @@
 		<div><hr></div>
 	</div>
 	<div>
+	<kp:welcome name="Pratik Bharambe"></kp:welcome>
+	<br><br>
 		<kp:hello lastName="Pratik" firstName="Bharambe"></kp:hello>	
 		<kp:calculate num2="2" num1="10"></kp:calculate>
 	</div>
+	
+	<br>
+	<br>
+	
+	<kp:printtable num1="8"></kp:printtable>
 
 </body>
 </html>

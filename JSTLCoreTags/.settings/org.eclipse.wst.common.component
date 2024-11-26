@@ -2,12 +2,6 @@
     <wb-module deploy-name="JSTLCoreTags">
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <dependent-module archiveName="standard.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/IET/Desktop/Web Based Java Programming/.jar files/standard.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="jstl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/IET/Desktop/Web Based Java Programming/.jar files/jstl.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="JSTLCoreTags"/>
         <property name="java-output-path" value="/JSTLCoreTags/build/classes"/>
     </wb-module>

@@ -33,4 +33,24 @@
 		</attribute>
 	</tag>	
 	
+	<tag>
+		<name>welcome</name>
+		<tag-class>com.demo.tags.WelcomeTagHandler</tag-class>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+	</tag>	
+	
+	<tag>
+		<name>printtable</name>
+		<tag-class>com.demo.tags.PrintTableTagHandler</tag-class>
+		<attribute>
+			<name>num1</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>			
+		</attribute>
+	</tag>	
+	
 </taglib>
