@@ -13,8 +13,8 @@
 
 	<div>
 		<h2>
-			User Name : ${user.name} <br> Date :
-			<%=LocalDate.now()%>
+			User Name : ${user.username} <br> 
+			Date : <%=LocalDate.now()%>
 		</h2>
 	</div>
 
@@ -55,7 +55,11 @@
 
 		</table>
 		
-		<a href="categories">add more products</a>
+<!-- 		<a href="catagories">add more products</a> -->
+		
+		<form action="catagories">
+			<button type="submit" name="btn" id="btn">Add More Products</button>
+		</form>
 		
 		<form action="payment.jsp">
 			<button type="submit" name="btn" id="btn">Payment</button>

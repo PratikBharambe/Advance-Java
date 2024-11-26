@@ -54,7 +54,7 @@ public class AddOrShowCart extends HttpServlet {
 					clist.add(c);
 				}
 				sess.setAttribute("cart", clist);
-				RequestDispatcher rd = request.getRequestDispatcher("categories");
+				RequestDispatcher rd = request.getRequestDispatcher("catagories");
 				rd.forward(request, response);
 			}
 
