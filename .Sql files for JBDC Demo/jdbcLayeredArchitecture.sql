@@ -57,3 +57,27 @@ insert into accounts values (1, "Pratik Bharambe", "pratikbharambe@gmail.com", 1
 (2, "Lalit Kamble", "lalitkamble@gmail.com", 105000),
 (3, "Shreyas Patil", "Shreyaspatil@gmail.com", 50000),
 (4, "Tejas Patil", "tejaspatil@gmail.com", 20000);
+
+
+drop table if exists books;
+
+create table books(id int PRIMARY KEY, name varchar(50), qty int, price DECIMAL, authername varchar(30), cid int);
+
+insert into books values(1, 'Crime and Punishment', 26, 200, 'Fyodor Dostoevsky', 1),
+(2, 'The Shining', 06, 500, 'Stephen King', 2),
+(3, 'Catching Fire', 01, 2500, 'Suzanne Collins', 3),
+(4, 'Murder on the Orient Express', 99, 1200, 'Agatha Christie', 4),
+(5, 'Romeo and Juliet', 27, 1200, 'William Shakespeare', 1),
+(6, 'The Exorcist', 16, 2250, 'William Peter Blatty', 2),
+(7, 'Twilight', 68, 2025, 'Stephenie Meyer', 3),
+(8, 'Gone Girl', 25, 1600, 'Gillian Flynn', 4);
+
+
+drop table if exists bookCatagory;
+
+create table bookCatagory(id int, bname varchar(30), bdesc varchar(50));
+
+insert into bookCatagory values(1, 'Fiction', 'Imaginative form of narrative'),
+(2, 'Horror', 'Scarey'),
+(3, 'Comedy', 'Something to make us laugh'),
+(4, 'Mystery', 'A Puzzling Genre');
