@@ -15,12 +15,14 @@ public class BookDaoImpl implements BookDao {
 	private static Connection conn;
 	private static PreparedStatement getAllCatagory;
 	private static PreparedStatement getBooksById;
+	private static PreparedStatement getById;
 
 	static {
 		try {
 			conn = DBUtil.getConnection();
 			getAllCatagory = conn.prepareStatement("select * from bookcatagory");
 			getBooksById = conn.prepareStatement("select * from books where cid = ?");
+			getById = conn.prepareStatement("selec * from book where id = ?");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -46,13 +48,28 @@ public class BookDaoImpl implements BookDao {
 	public List<Book> getBooksById(int id) {
 		List<Book> blist = new ArrayList<Book>();
 		try {
-			getBooksById.setInt(1, id);
-			ResultSet rs = getBooksById.executeQuery();
+			getById.setInt(1, id);
+			ResultSet rs = getById.executeQuery();
 			while(rs.next()) {
 				blist.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getString(5), rs.getInt(6)));
 			}
 			if (blist.size() > 0)
 				return blist;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Book getById(int id) {
+		try {
+			getBooksById.setInt(1, id);
+			ResultSet rs = getBooksById.executeQuery();
+			if(rs.next()) {
+				return (new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getDouble(4), rs.getString(5), rs.getInt(6)));
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
