@@ -26,8 +26,8 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public Book getById(int int1) {
-		return bd.getById(int1);
+	public Book getBookById(int id) {
+		return bd.getBooById(id);
 	}
 	
 	
